@@ -9,13 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeApiService } from './poke-api.service';
+import { PokedetailComponent } from './pokedetail/pokedetail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyComponentComponent,
-    FilterPokemonPipePipe
+    FilterPokemonPipePipe,
+    PokedetailComponent
   ],
   imports: [
     FormsModule,

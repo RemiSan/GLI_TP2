@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon } from './pokemon';
+import { PokeDetails, Pokemon, PokeServiceRes } from './pokemon';
 import { Observable } from 'rxjs';
 
 const pokeLink = 'https://pokeapi.co/api/v2/pokemon/';
@@ -9,11 +9,13 @@ const pokeLink = 'https://pokeapi.co/api/v2/pokemon/';
   providedIn: 'root'
 })
 export class PokeApiService {
-
-
   constructor(private http: HttpClient) { }
 
-  getPokemons() : Observable<any>{
-    return this.http.get(pokeLink);
+  getPokemons(): Observable<PokeServiceRes> {
+    return this.http.get<PokeServiceRes>(pokeLink);
+  }
+
+  getPokeminsDetails(pokemon : Pokemon): Observable<PokeDetails> {
+    return this.http.get<PokeDetails>(pokemon.url);
   }
 }

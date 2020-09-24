@@ -1,0 +1,10 @@
+<h1>{{pokeDetail.name | titlecase}}</h1>
+
+<img [src]="pokeDetail.sprites.front_default" />
+<img [src]="pokeDetail.sprites.back_default" />
+<br><br>
+<img [src]="pokeDetail.sprites.front_shiny" />
+<img [src]="pokeDetail.sprites.back_shiny" />
+<ul>
+    <li *ngFor="let ability of pokeDetail.abilities">{{ability.ability.name| titlecase}}</li>
+</ul>
