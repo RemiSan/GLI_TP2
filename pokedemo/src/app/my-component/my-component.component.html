@@ -1,0 +1,13 @@
+{{selectedPokemonId}}
+<hr />
+<br>
+Filtre Pokemon <input type="text" placeholder="Nom du Pokemon" [(ngModel)]="pokemonNameFilter"/>
+<br><br>
+Choix du Pokemon
+<select [(ngModel)]="selectedPokemonId">
+    <option *ngFor="let pokemon of (listPokemons | filterPokemonPipe:'nom':pokemonNameFilter)" [value]="pokemon.id">
+      {{pokemon.nom}}
+    </option>
+</select>
+<br>
+<button (click)="myFunc()">Go !</button>
